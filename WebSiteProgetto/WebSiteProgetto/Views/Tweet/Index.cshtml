@@ -1,0 +1,16 @@
+﻿@model List<WebSiteProgetto.Models.TweetModel>
+
+    @{
+        ViewBag.Title = "Index";
+    }
+
+    <h2>Lista Tweet</h2>
+    @foreach (var tweet in Model)
+    {
+        <div>
+            <p>tweet.Id</p>
+            <p>tweet.data</p>
+            <p>tweet.testo</p>
+        </div>
+    }
+
