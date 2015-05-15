@@ -1,0 +1,10 @@
+git branch			fa vedere branch
+git branch nomeBranch		crea branch di nome nomeBranch
+git checkout nomeBranch		cambia branch
+git add file1 file2		aggiunge al branch i file1 e file2
+git push origin nomeBranch	porta il branch da locale a remoto
+git remote -v			bu fa vedere qualcosa
+
+
+git branch -d the_local_branch		To remove a local branch from your machine:
+git push origin :the_remote_branch	To remove a remote branch from the server:
