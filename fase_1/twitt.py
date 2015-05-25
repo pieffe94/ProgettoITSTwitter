@@ -1,6 +1,6 @@
 import requests
 import base64
-#import psycopg2
+import psycopg2
 
 
 def get_token(client_id, client_secret):
@@ -40,16 +40,20 @@ def search_tweets(what, token):
     return data['statuses']
 
 
-def save_tweets(tweet,path):
-    file=open(path, 'a')
-    id_tweet="\n"+str(tweet['id'])
-    date="\n"+str(tweet['created_at'])
-    text="\n"+str(tweet['text'])
-    file.write("\n*")
-    file.write(id_tweet)
-    file.write(date)
-    file.write(text)
-    file.close()
+def save_tweets(tweets):
+    conn = psycopg2.connect(host='localhost',
+                            port=5432,
+                            dbname='lesson_10',
+                            user='test_10',
+                            password='test_10')
+    curs = conn.cursor()
+    for tweet in tweets:
+        curs.execute(
+            'INSERT INTO tweets (id, date, text) VALUES (%s, %s, %s)',
+            (tweet['id'], tweet['created_at'], tweet['text'])
+        )
+    conn.commit()
+    conn.close()
 
 
 if __name__ == '__main__':
