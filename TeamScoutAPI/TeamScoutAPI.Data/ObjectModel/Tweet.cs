@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace TeamScoutAPI.Data.ObjectModel
 {
-    class Tweet
+    public class Tweet
     {
         public int Id { get; set; }
-        public string data { get; set; }
-        public string testo { get; set; }
+        public string Date { get; set; }
+        public int Id_user { get; set; }
+        public string Arguments { get; set; }
     }
 }
