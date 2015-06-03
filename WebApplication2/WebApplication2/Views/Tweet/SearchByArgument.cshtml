@@ -1,0 +1,15 @@
+﻿@model List<WebApplication2.Models.TweetModel>
+@{
+    ViewBag.Title = "SearchByArgument";
+}
+
+<h2>Search by argument</h2>
+
+<p>Twitt a riguardo : </p>
+@foreach (var tweet in Model)
+{
+    <p>@tweet.Date</p>
+}
+
+
+

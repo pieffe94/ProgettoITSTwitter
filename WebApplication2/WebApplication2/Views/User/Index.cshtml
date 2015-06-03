@@ -1,0 +1,16 @@
+﻿@model IEnumerable<WebApplication2.Models.UserModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Utenti</h2>
+
+@foreach (var utente in Model)
+{
+    <div>
+        <p>@utente.Id</p>
+        <p>@utente.Location</p>
+        <p>@utente.Followers</p>
+    </div>
+}
+

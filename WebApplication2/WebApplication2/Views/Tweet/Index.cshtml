@@ -1,0 +1,17 @@
+﻿@model List<WebApplication2.Models.TweetModel>
+
+    @{
+        ViewBag.Title = "Index";
+    }
+
+    <h2>Tweets</h2>
+
+<h3>Argomenti twittati : </h3>
+    @foreach (var tweet in Model)
+    {
+        <div>
+            <p>@Html.ActionLink(tweet.Argument,"SearchByArgument","Tweet",tweet.Argument)</p>
+        </div>
+    }
+
+
